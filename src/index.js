@@ -5,6 +5,9 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import axios from 'axios';
 
+axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
+axios.defaults.headers.common = ['Authorization'] = 'AUTH TOKEN';
+
 //// Interceptors allow for global code execution
 // Used to add some common headers whenever a request is made
 axios.interceptors.request.use(request => {
