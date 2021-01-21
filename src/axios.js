@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-//Test2
-
 const instance = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com'
 });
