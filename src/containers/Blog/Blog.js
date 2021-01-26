@@ -7,6 +7,9 @@ import NewPost from './NewPost/NewPost';
 import FullPost from "./FullPost/FullPost";
 
 class Blog extends Component {
+    state = {
+        auth: false
+    }
     render () {
         return (
             <div className="Blog">
@@ -36,7 +39,8 @@ class Blog extends Component {
                 {/*<Route path="/" exact render={() => <h1>Home</h1>}/>*/}
                 {/*Switch allows only one route to load */}
                 <Switch>
-                    <Route path="/new-post" component={NewPost}/>
+                    {/*This is a guard */}
+                    {this.state.auth ? <Route path="/new-post" component={NewPost}/> : null}
                     <Route path="/posts" component={Posts}/>
                     <Redirect from="/" to="/posts"/>
                     {/*<Route path="/" component={Posts}/>*/}
