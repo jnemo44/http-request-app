@@ -14,14 +14,14 @@ class Blog extends Component {
                     <nav>
                         <ul>
                             <li><NavLink 
-                                to='/' 
+                                to='/posts/' 
                                 exact
                                 //You can change the css class when active
                                 activeClassName="my-active"
                                 activeStyle={{
                                     color: 'red',
                                     textDecoration: 'underline'
-                                }}>Home</NavLink></li>
+                                }}>Posts</NavLink></li>
                             <li><NavLink to={{
                                 //Relative Path
                                 //pathname: this.props.match.url + '/new-post',
@@ -34,11 +34,10 @@ class Blog extends Component {
                     </nav>
                 </header>
                 {/*<Route path="/" exact render={() => <h1>Home</h1>}/>*/}
+                {/*Switch allows only one route to load */}
                 <Switch>
-                    <Route path="/" exact component={Posts}/>
                     <Route path="/new-post" component={NewPost}/>
-                    {/*This is a flexible param and needs to go last*/}
-                    <Route path="/:id" exact component={FullPost}/>
+                    <Route path="/posts" component={Posts}/>
                 </Switch>
 
                 
