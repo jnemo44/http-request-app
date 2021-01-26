@@ -42,7 +42,9 @@ class Blog extends Component {
                     {/*This is a guard */}
                     {this.state.auth ? <Route path="/new-post" component={NewPost}/> : null}
                     <Route path="/posts" component={Posts}/>
-                    <Redirect from="/" to="/posts"/>
+                    {/*A way to handle 404 error, it is a catch all*/}
+                    <Route render={() => <h1>Not found</h1>}/>
+                    {/*<Redirect from="/" to="/posts"/>*/}
                     {/*<Route path="/" component={Posts}/>*/}
                 </Switch>
 
